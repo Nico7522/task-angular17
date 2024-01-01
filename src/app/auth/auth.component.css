@@ -1,0 +1,18 @@
+.auth-section {
+    width: 700px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+a {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+    background: #779b23;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #2b3b06;
+}
