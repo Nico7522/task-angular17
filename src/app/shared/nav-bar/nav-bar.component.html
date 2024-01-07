@@ -2,12 +2,16 @@
     <li ngbNavItem>
         <a ngbNavLink routerLink="/">Acceuil</a>
       </li>
-    <li ngbNavItem>
-      <a ngbNavLink routerLink="/auth/login">Se connecter</a>
-    </li>
-    <li ngbNavItem>
-        <a ngbNavLink routerLink="/auth/register">S'enregister</a>
+      <div class="auth">
+        <li ngbNavItem>
+          <a ngbNavLink routerLink="/auth/login">Se connecter</a>
+        </li>
+        <li ngbNavItem >
+            <a ngbNavLink routerLink="/auth/register">S'enregister</a>
+        </li>
 
-    </li>
+      </div>
+    
   </ul>
+
   <div [ngbNavOutlet]="nav"></div>

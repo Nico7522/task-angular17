@@ -2,3 +2,10 @@
 h1, h2 {
     text-align: center;
 }
+
+.alert-message {
+    width: 190px;
+    text-align: center;
+    height: 30px;
+    background: rgb(204, 57, 57);
+}

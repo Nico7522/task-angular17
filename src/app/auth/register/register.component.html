@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="form">
+  <form (ngSubmit)="handleSubmit()" [formGroup]="registerForm">
+    <div class="field">
+      <label for="firstName">Firstname</label>
+      <input formControlName="firstName" type="text" />
+      <div
+        [hidden]="displayErrorInput(registerForm, 'firstName', 'required')"
+        class="alert-message"
+      >
+        Name is required
+      </div>
+    </div>
+    <div class="field">
+      <label for="lastName">Lastname</label>
+      <input formControlName="lastName" type="text" />
+      <div
+        [hidden]="displayErrorInput(registerForm, 'lastName', 'required')"
+        class="alert-message"
+      >
+        Lastname is required
+      </div>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input formControlName="email" type="email" />
+      <div
+        [hidden]="displayErrorInput(registerForm, 'email', 'pattern')"
+        class="alert-message"
+      >
+        Email not valid
+      </div>
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input formControlName="password" type="password" />
+      <div
+        [hidden]="displayErrorInput(registerForm, 'password', 'pattern')"
+        class="alert-message"
+      >
+        Password not valid
+      </div>
+    </div>
+    <button
+      [disabled]="!registerForm.valid"
+      type="submit"
+      class="btn btn-success"
+    >
+      Register
+    </button>
+  </form>
+</div>
