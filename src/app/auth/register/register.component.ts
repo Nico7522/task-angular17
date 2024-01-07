@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { displayError } from '../../../utils/displayError';
+import { isDirty } from '../../guards/interfaces/guard-interfaces';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
-export class RegisterComponent {
+export class RegisterComponent implements isDirty {
   mailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
   registerForm: FormGroup;
@@ -34,5 +35,9 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       console.log('valide');
     }
+  }
+
+  isDirty(): boolean {
+    return this.registerForm.dirty && !this.registerForm.valid;
   }
 }
